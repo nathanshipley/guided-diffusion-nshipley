@@ -37,6 +37,11 @@ def main():
     if args.use_fp16:
         model.convert_to_fp16()
     model.eval()
+    
+    if seed is not None:
+        th.manual_seed(seed)
+        logger.log("Setting seed to user value.")
+        print("Seed set to", seed)
 
     logger.log("sampling...")
     all_images = []
@@ -97,6 +102,7 @@ def create_argparser():
         batch_size=16,
         use_ddim=False,
         model_path="",
+        seed=None,
     )
     defaults.update(model_and_diffusion_defaults())
     parser = argparse.ArgumentParser()
