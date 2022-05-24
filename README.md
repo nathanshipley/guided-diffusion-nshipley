@@ -1,3 +1,7 @@
+# guided-diffusion-nshipley
+
+Forked to modify for generating samples with custom/fixed seeds.
+
 
 # guided-diffusion-sxela
 
