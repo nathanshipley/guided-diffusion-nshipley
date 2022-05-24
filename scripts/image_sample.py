@@ -38,10 +38,10 @@ def main():
         model.convert_to_fp16()
     model.eval()
     
-    if seed is not None:
-        th.manual_seed(seed)
+    if args.seed is not None:
+        th.manual_seed(args.seed)
         logger.log("Setting seed to user value.")
-        print("Seed set to", seed)
+        print("Seed set to", args.seed)
 
     logger.log("sampling...")
     all_images = []
